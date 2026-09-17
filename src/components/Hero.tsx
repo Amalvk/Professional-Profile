@@ -6,12 +6,11 @@ import SocialLinks from "./SocialLinks";
 import CodingLottie from "./CodingLottie";
 
 const ROLES = [
-  "Frontend Developer 💻",
-  "Problem-Solving Savant 🧠",
-  "Proud BTech Graduate 🎓",
-  "Wanderlust Explorer ✈️",
+  "Problem-Solving Savant",
+  "Proud BTech Graduate",
+  "Wanderlust Explorer",
+  "Frontend Developer",
 ];
-const FINAL_TEXT = "Available for new opportunities";
 const TYPE_SPEED = 45;
 const DELETE_SPEED = 25;
 const HOLD_TIME = 1200;
@@ -39,7 +38,7 @@ function getGreeting() {
   return "Good Evening";
 }
 
-function useTypewriterCycle(phrases: string[], finalText: string) {
+function useTypewriterCycle(phrases: string[]) {
   const [display, setDisplay] = useState("");
   const [isDone, setIsDone] = useState(false);
 
@@ -49,7 +48,7 @@ function useTypewriterCycle(phrases: string[], finalText: string) {
       new Promise<void>((resolve) => setTimeout(resolve, ms));
 
     async function run() {
-      for (const phrase of phrases) {
+      for (const phrase of phrases.slice(0, -1)) {
         for (let i = 1; i <= phrase.length; i++) {
           if (cancelled) return;
           setDisplay(phrase.slice(0, i));
@@ -63,9 +62,10 @@ function useTypewriterCycle(phrases: string[], finalText: string) {
           await sleep(DELETE_SPEED);
         }
       }
-      for (let i = 1; i <= finalText.length; i++) {
+      const lastPhrase = phrases[phrases.length - 1];
+      for (let i = 1; i <= lastPhrase.length; i++) {
         if (cancelled) return;
-        setDisplay(finalText.slice(0, i));
+        setDisplay(lastPhrase.slice(0, i));
         await sleep(TYPE_SPEED);
       }
       if (!cancelled) setIsDone(true);
@@ -75,7 +75,7 @@ function useTypewriterCycle(phrases: string[], finalText: string) {
     return () => {
       cancelled = true;
     };
-  }, [phrases, finalText]);
+  }, [phrases]);
 
   return { display, isDone };
 }
@@ -97,7 +97,7 @@ const item = {
 };
 
 export default function Hero() {
-  const { display } = useTypewriterCycle(ROLES, FINAL_TEXT);
+  const { display } = useTypewriterCycle(ROLES);
   const isMobile = useIsMobile();
 
   return (
@@ -110,16 +110,6 @@ export default function Hero() {
     >
       <div className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
         <div className="flex flex-col items-start gap-6">
-          <motion.span
-            variants={item}
-            className="rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-accent-2"
-          >
-            {display}
-            <span className="ml-0.5 inline-block w-[1px] animate-cursor-blink border-l-2 border-accent-2">
-              &nbsp;
-            </span>
-          </motion.span>
-
           <motion.h1
             variants={item}
             className="font-semibold leading-tight text-onbg-heading"
@@ -128,7 +118,10 @@ export default function Hero() {
               {getGreeting()}, I'm {profile.name}
             </span>
             <span className="gradient-text block text-lg sm:text-xl md:text-2xl">
-              {profile.title}
+              {display}
+              <span className="ml-0.5 inline-block w-[1px] animate-cursor-blink border-l-2 border-accent-2">
+                &nbsp;
+              </span>
             </span>
           </motion.h1>
 
