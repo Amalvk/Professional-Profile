@@ -51,7 +51,7 @@ export default function LiveProjects() {
                 ))}
               </ul>
 
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-5 mb-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}

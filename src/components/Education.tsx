@@ -24,19 +24,17 @@ export default function Education() {
               <div className="flex flex-1 items-start gap-3">
                 <FiBookOpen className="mt-1 h-5 w-5 shrink-0 text-accent" />
                 <div className="flex flex-1 flex-col">
-                  <div className="flex flex-wrap items-start justify-between gap-2">
-                    <h4 className="text-base font-semibold text-heading">
-                      {edu.school}
-                    </h4>
-                    <span className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-text-muted">
-                      {edu.duration}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-sm text-text-muted">{edu.degree}</p>
+                  <h4 className="text-base font-semibold text-heading">
+                    {edu.school}
+                  </h4>
+                  <p className="mt-1 text-sm text-heading">{edu.degree}</p>
                   <p className="mt-1 text-sm text-text-muted">{edu.location}</p>
-                  <p className="mt-auto pt-2 text-sm font-medium text-accent-2">
-                    {edu.grade}
+                  <p className="mt-2 text-sm font-medium text-accent-2">
+                    Score : {edu.grade}
                   </p>
+                  <span className="mt-2 w-fit rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-text-muted">
+                    {edu.duration}
+                  </span>
                 </div>
               </div>
             </Reveal>
