@@ -36,11 +36,6 @@ export default function Experience() {
                   <div>
                     <h3 className="text-lg font-semibold text-heading">
                       {exp.role}
-                      {exp.empId && (
-                        <span className="ml-2 font-normal text-text-muted/70">
-                          {exp.empId}
-                        </span>
-                      )}
                     </h3>
                     <p className="text-sm text-text-muted">
                       {exp.url ? (
@@ -59,9 +54,16 @@ export default function Experience() {
                     </p>
                   </div>
                 </div>
-                <span className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-text-muted">
-                  {exp.date}
-                </span>
+                <div className="flex flex-col items-start gap-1 sm:items-end sm:gap-2">
+                  <span className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-text-muted">
+                    {exp.date}
+                  </span>
+                  {exp.empId && (
+                    <span className="text-xs text-text-muted/70">
+                      Emp ID: {exp.empId}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <ul className="mt-4 space-y-2">

@@ -16,6 +16,22 @@ const TYPE_SPEED = 45;
 const DELETE_SPEED = 25;
 const HOLD_TIME = 1200;
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth < breakpoint
+  );
+
+  useEffect(() => {
+    const query = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const handleChange = () => setIsMobile(query.matches);
+    handleChange();
+    query.addEventListener("change", handleChange);
+    return () => query.removeEventListener("change", handleChange);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 function getGreeting() {
   const hour = new Date().getHours();
   if (hour < 12) return "Good Morning";
@@ -82,6 +98,7 @@ const item = {
 
 export default function Hero() {
   const { display } = useTypewriterCycle(ROLES, FINAL_TEXT);
+  const isMobile = useIsMobile();
 
   return (
     <motion.section
@@ -140,7 +157,7 @@ export default function Hero() {
             <a
               href={profile.resumeUrl}
               download
-              className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-onbg-heading transition-colors hover:border-accent hover:text-accent"
+              className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-onbg-heading transition-colors hover:border-onbg-accent hover:text-onbg-accent"
             >
               <FiDownload className="h-4 w-4" /> Download Resume
             </a>
@@ -151,9 +168,11 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.div variants={item} className="mx-auto w-full max-w-sm">
-          <CodingLottie className="w-full" />
-        </motion.div>
+        {!isMobile && (
+          <motion.div variants={item} className="mx-auto w-full max-w-sm">
+            <CodingLottie className="w-full" />
+          </motion.div>
+        )}
       </div>
     </motion.section>
   );

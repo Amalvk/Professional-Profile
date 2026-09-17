@@ -57,13 +57,13 @@ export default function Contact() {
           </div>
 
           <div className="mt-6 flex items-center gap-3 text-sm text-onbg-text">
-            <FiMail className="h-4 w-4 text-accent" />
-            <a href={`mailto:${profile.email}`} className="hover:text-accent">
+            <FiMail className="h-4 w-4 text-onbg-accent" />
+            <a href={`mailto:${profile.email}`} className="hover:text-onbg-accent">
               {profile.email}
             </a>
           </div>
           <div className="mt-3 flex items-center gap-3 text-sm text-onbg-text">
-            <FiMapPin className="h-4 w-4 text-accent" />
+            <FiMapPin className="h-4 w-4 text-onbg-accent" />
             {profile.location}
           </div>
 
