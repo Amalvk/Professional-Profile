@@ -17,7 +17,7 @@ export default function SectionHeading({
         </span>
       )}
       <div>
-        <h2 className="text-3xl font-semibold text-onbg-heading md:text-4xl">
+        <h2 className="text-xl font-semibold text-onbg-heading sm:text-3xl md:text-4xl">
           {title}
         </h2>
         <p className="mt-1 text-sm font-medium uppercase tracking-widest text-onbg-accent">
