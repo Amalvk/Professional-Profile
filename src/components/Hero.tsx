@@ -108,7 +108,7 @@ export default function Hero() {
       animate="show"
       className="mx-auto max-w-6xl px-6 pb-20 pt-16 sm:px-8 md:pt-24 lg:px-12"
     >
-      <div className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
+      <div className="grid items-center gap-10 md:grid-cols-[2.3fr_1fr]">
         <div className="flex flex-col items-start gap-6">
           <motion.h1
             variants={item}
@@ -127,7 +127,7 @@ export default function Hero() {
 
           <motion.p
             variants={item}
-            className="max-w-2xl text-base leading-relaxed text-onbg-muted md:text-lg"
+            className="max-w-none text-base leading-relaxed text-onbg-muted"
           >
             {profile.tagline}
           </motion.p>
