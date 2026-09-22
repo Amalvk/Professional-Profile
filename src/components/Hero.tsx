@@ -6,10 +6,11 @@ import SocialLinks from "./SocialLinks";
 import CodingLottie from "./CodingLottie";
 
 const ROLES = [
-  "Problem-Solving Savant",
-  "Proud BTech Graduate",
-  "Wanderlust Explorer",
-  "Frontend Developer",
+  "AI-Assisted Developer",
+  "Modern Web Craftsman",
+  "Micro-Frontend Explorer",
+  "Scalable Web Builder",
+  "UI Engineering Enthusiast",
 ];
 const TYPE_SPEED = 45;
 const DELETE_SPEED = 25;

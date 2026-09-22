@@ -15,20 +15,33 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+        ticking = false;
+      });
+    };
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrolled = scrollY > 8;
+  const bgOpacity = Math.min(scrollY / 80, 1);
+
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors ${
-        scrolled ? "bg-bg/90 backdrop-blur border-b border-border" : "bg-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50">
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 border-b border-border bg-bg/90 backdrop-blur transition-opacity duration-500 ease-out"
+        style={{ opacity: bgOpacity }}
+      />
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
         <a
           href="#top"
