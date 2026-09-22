@@ -38,7 +38,7 @@ export const profile = {
   name: "Amal VK",
   title: "Frontend Developer",
   tagline:
-    "Front-End Developer with significant professional experience in React, delivering scalable, high-quality web applications and collaborating effectively with cross-functional teams. Passionate about innovation, continuous learning, performance optimization, and creating impactful user experiences.",
+    "Experienced software professional with significant expertise in React, building scalable, high-quality web applications and collaborating effectively with cross-functional teams. Passionate about innovation, continuous learning, performance optimization, and creating impactful user experiences.",
   location: "Kerala, India",
   email: "amalvkp@gmail.com",
   resumeUrl: "/resume/Resume_AmalVK.pdf",

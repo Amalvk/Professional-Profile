@@ -16,7 +16,7 @@ export default function About() {
         {summaryParagraphs.map((paragraph, i) => (
           <p
             key={i}
-            className="text-base leading-loose text-onbg-muted md:text-lg"
+            className="text-lg leading-loose text-onbg-muted"
           >
             {paragraph(years)}
           </p>
