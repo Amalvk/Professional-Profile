@@ -114,7 +114,7 @@ export default function Hero() {
             variants={item}
             className="font-semibold leading-tight text-onbg-heading"
           >
-            <span className="block whitespace-nowrap text-lg sm:text-2xl md:text-4xl">
+            <span className="block whitespace-nowrap text-[22px] sm:text-2xl md:text-[28px]">
               {getGreeting()}, I'm {profile.name}
             </span>
             <span className="gradient-text block text-lg sm:text-xl md:text-2xl">
