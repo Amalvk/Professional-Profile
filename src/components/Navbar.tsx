@@ -30,7 +30,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
-        <a href="#top" className="text-lg font-semibold text-onbg-heading">
+        <a
+          href="#top"
+          className={`text-lg font-semibold text-onbg-heading transition-opacity duration-300 ${
+            scrolled ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        >
           {profile.name}
         </a>
 
