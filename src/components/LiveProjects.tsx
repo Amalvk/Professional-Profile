@@ -10,11 +10,11 @@ export default function LiveProjects() {
         <SectionHeading eyebrow="Personal work" title="Live Projects" icon={FiGlobe} />
       </Reveal>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {liveProjects.map((project, i) => (
           <Reveal
             key={project.name}
-            delay={(i % 3) * 0.1}
+            delay={(i % 2) * 0.1}
             className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/90 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg"
           >
             {project.image && (
