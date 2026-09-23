@@ -389,7 +389,18 @@ export const liveProjects: Project[] = [
     ],
     tags: ["Next.js", "React", "Tailwind CSS"],
   },
-
+  {
+    name: "ChittyMate",
+    link: "https://chittymate.netlify.app/",
+    description: ["Real-time chitti (rotating savings) management platform with live auctions and payment tracking."],
+    roles: [
+      "Built with React, TypeScript, and Firebase, with real-time Firestore updates for payment eligibility and cycle management",
+      "Implemented real-time auction experience with countdown-based lot selection, automated winner exclusion, and animated winner selection",
+      "Designed cycle transitions with historical tracking of previous chitti holders",
+      "Built a shared read-only view for chitti status, payment progress, upcoming auctions, and winner history across mobile and desktop",
+    ],
+    tags: ["React", "TypeScript", "Firebase", "Firestore", "Real-time"],
+  },
 ];
 
 export type Education = {
