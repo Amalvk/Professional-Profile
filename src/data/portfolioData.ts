@@ -170,7 +170,7 @@ export const experiences: Experience[] = [
     empId: "TTIND27",
     url: "https://talksandtalks.ai/",
     logo: "/logos/companies/talksandtalks.png",
-    date: "Jun 2025 - May 2026",
+    date: "6th Jun 2025 - 29th May 2026",
     bullets: [
       "Collaborated with the R&D team on Agentic task API integrations, including email automation and HR onboarding workflows",
       "Integrated real-time streaming data APIs to enable seamless live data updates in applications",
@@ -184,7 +184,7 @@ export const experiences: Experience[] = [
     empId: "1347914",
     url: "https://www.infosys.com/",
     logo: "/logos/companies/infosys.jpg",
-    date: "Mar 2024 - May 2025",
+    date: "18th March 2024 - 16th May 2025",
     bullets: [
       "Team Collaboration and Client Interaction",
       "Involved in requirement analysis and solution design within an Agile Scrum environment",
