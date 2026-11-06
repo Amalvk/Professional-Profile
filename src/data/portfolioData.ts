@@ -165,6 +165,19 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    role: "Sr. Software Engineer",
+    company: "Celsior Technologies",
+    empId: "CELN00642",
+    logo: "/logos/companies/celsior.jpg",
+    date: "12th Nov 2026 - Present",
+    bullets: [
+      "Migrated the company's static marketing website to a Next.js App Router application with no change to the existing design or animations",
+      "Integrated Storyblok CMS so marketing can edit the Home, Contact, Blogs and Footer pages with live Visual Editor preview",
+      "Built separate draft and published content environments with click-to-edit preview",
+      "Documented every page and component, with editable fields and limits, for the marketing team",
+    ],
+  },
+  {
     role: "Software Engineer",
     company: "Talks & Talks",
     empId: "TTIND27",
@@ -238,6 +251,22 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "Celsior Corporate Website",
+    logo: "/logos/projects/celsior.jpg",
+    description: [
+      "Enterprise corporate website moved from static pages to a CMS-driven Next.js app",
+      "Marketing teams can update content themselves, and the original animations and layout are kept",
+    ],
+    roles: [
+      "Designed a content-slot engine that fills the existing pages with CMS content, so the UI and GSAP/Three.js animations stay unchanged",
+      "Made the homepage sections, particle section, Contact page, SEO fields and site footer editable through reusable CMS components",
+      "Built a CMS-managed blog list with an optional hero and image focus-point support",
+      "Added a draft preview mode with separate preview and production environments",
+      "Wrote a component guide for the marketing team (parameters, nested options, limits and screenshots)",
+    ],
+    tags: ["Next.js", "React", "Storyblok", "GSAP", "Three.js"],
+  },
   {
     name: "NeoroTalks",
     logo: "/logos/projects/neorotalks.png",
